@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="case-container">
+        <h2>Выберите кейс:</h2>
+
+        <!-- Обычный кейс -->
+        <div class="case">
+            <img src="https://via.placeholder.com/150x150?text=Обычный+кейс" alt="Обычный кейс" class="case-img">
+            <button id="basic-case">Обычный кейс (10 монет)</button>
+        </div>
+
+        <!-- Средний кейс -->
+        <div class="case">
+            <img src="https://via.placeholder.com/150x150?text=Средний+кейс" alt="Средний кейс" class="case-img">
+            <button id="medium-case">Средний кейс (100 монет)</button>
+        </div>
+
+        <!-- Крутой кейс -->
+        <div class="case">
+            <img src="https://via.placeholder.com/150x150?text=Крутой+кейс" alt="Крутой кейс" class="case-img">
+            <button id="premium-case">Крутой кейс (1000 монет)</button>
+        </div>
+
+        <div id="error-message">
+            <h4>У вас недостаточно монет!</h4>
+        </div>
+        <div id="tap-count">Тапов: 0</div>
+    </div>
+
+<div id="menu">
+    <a href="index.html">
+        <div class="menu-item" data-page="home">
+            <img src="https://cdn-icons-png.flaticon.com/128/3917/3917033.png" alt="Home">
+            <span>Home</span>
+        </div>
+    </a>
+    <a href="cases.html">
+        <div class="menu-item" data-page="cases">
+            <img src="https://cdn-icons-png.flaticon.com/128/3916/3916598.png" alt="Cases">
+            <span>Cases</span>
+        </div>
+    </a>
+    <a href="promo.html">
+        <div class="menu-item" data-page="promo">
+            <img src="https://cdn-icons-png.flaticon.com/128/5527/5527871.png" alt="Promo">
+            <span>Promo</span>
+        </div>
+    </a>
+    <a href="leaderboard.html">
+        <div class="menu-item" data-page="leaderboard">
+            <img src="https://cdn-icons-png.flaticon.com/128/25/25617.png" alt="Leaderboard">
+            <span>Leaderboard</span>
+        </div>
+    </a>
+    <a href="daily.html">
+        <div class="menu-item" data-page="daily">
+            <img src="https://cdn-icons-png.flaticon.com/128/372/372768.png" alt="Daily Bonus">
+            <span>Daily</span>
+        </div>
+    </a>
+</div>
+
+    
+    <script src="index.js"></script>
+</body>
+</html>
