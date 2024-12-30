@@ -1,4 +1,3 @@
-// Получаем количество монет и тапов из localStorage
 let coins = localStorage.getItem('coins') ? parseInt(localStorage.getItem('coins')) : 0;
 let tapCount = localStorage.getItem('tapCount') ? parseInt(localStorage.getItem('tapCount')) : 0;
 
