@@ -4,61 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tap Counter Game</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #87CEEB; /* Light blue background */
-            font-family: Arial, sans-serif;
-        }
-
-        #game-container {
-            text-align: center;
-        }
-
-        #tap-button {
-            background: url('https://via.placeholder.com/150') no-repeat center center;
-            background-size: cover;
-            width: 200px;
-            height: 200px;
-            border: none;
-            border-radius: 50%;
-            opacity: 0.8;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        #tap-button:active {
-            transform: scale(0.95);
-        }
-
-        #tap-count {
-            margin-top: 20px;
-            font-size: 24px;
-            font-weight: bold;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div id="game-container">
         <button id="tap-button"></button>
         <div id="tap-count">Taps: 0</div>
     </div>
-
-    <script>
-        let tapCount = 0;
-
-        const tapButton = document.getElementById('tap-button');
-        const tapCountDisplay = document.getElementById('tap-count');
-
-        tapButton.addEventListener('click', () => {
-            tapCount++;
-            tapCountDisplay.textContent = `Taps: ${tapCount}`;
-        });
-    </script>
+    
+    <script src="script.js"></script>
 </body>
 </html>
