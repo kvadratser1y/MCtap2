@@ -20,18 +20,21 @@ function updateLocalStorage() {
     localStorage.setItem('tapCount', tapCount);
 }
 
-// Функция открытия кейса
-function openCase(type) {
+// Страница рулетки
+if (window.location.pathname.includes('roulette.html')) {
+    const params = new URLSearchParams(window.location.search);
+    const caseType = params.get('type');
+    
     let cost = 0;
     let rewardRange = [0, 0];
 
-    if (type === 'basic') {
+    if (caseType === 'basic') {
         cost = 10;
         rewardRange = [1, 100]; // от 1 до 100
-    } else if (type === 'medium') {
+    } else if (caseType === 'medium') {
         cost = 100;
         rewardRange = [10, 1000]; // от 10 до 1000
-    } else if (type === 'premium') {
+    } else if (caseType === 'premium') {
         cost = 1000;
         rewardRange = [100, 10000]; // от 100 до 10000
     }
@@ -42,43 +45,24 @@ function openCase(type) {
         updateLocalStorage(); // Обновляем localStorage
         // Генерация случайного приза
         const prize = generatePrize(rewardRange);
-        // Переход на страницу с рулеткой
-        window.location.href = `roulette.html?prize=${prize}`;
+        // Отображаем приз
+        const prizeContainer = document.getElementById('prize');
+        prizeContainer.textContent = `+${prize} тапов`;
+
+        // Обновляем количество тапов в localStorage
+        tapCount += parseInt(prize);
+        updateLocalStorage();
     } else {
         errorMessage.style.display = 'block'; // Показываем сообщение о недостатке монет
     }
-}
-
-// Генерация случайного приза в зависимости от диапазона
-function generatePrize(rewardRange) {
-    return Math.floor(Math.random() * (rewardRange[1] - rewardRange[0] + 1)) + rewardRange[0];
-}
-
-// Обработчик для кнопок на главной странице
-if (basicCaseButton) {
-    basicCaseButton.addEventListener('click', () => openCase('basic'));
-}
-if (mediumCaseButton) {
-    mediumCaseButton.addEventListener('click', () => openCase('medium'));
-}
-if (premiumCaseButton) {
-    premiumCaseButton.addEventListener('click', () => openCase('premium'));
-}
-
-// Страница рулетки
-if (window.location.pathname.includes('roulette.html')) {
-    const params = new URLSearchParams(window.location.search);
-    const prize = params.get('prize');
-    
-    const prizeContainer = document.getElementById('prize');
-    prizeContainer.textContent = `+${prize} тапов`;
-
-    // Обновляем количество тапов в localStorage
-    tapCount += parseInt(prize);
-    updateLocalStorage();
 
     const goHomeButton = document.getElementById('go-home');
     goHomeButton.addEventListener('click', () => {
         window.location.href = 'index.html'; // Переход на главную страницу
     });
+}
+
+// Генерация случайного приза в зависимости от диапазона
+function generatePrize(rewardRange) {
+    return Math.floor(Math.random() * (rewardRange[1] - rewardRange[0] + 1)) + rewardRange[0];
 }
