@@ -1,4 +1,3 @@
-// Начальные данные
 let tapCount = localStorage.getItem('tapCount') ? parseInt(localStorage.getItem('tapCount')) : 0;
 let energy = localStorage.getItem('energy') ? parseInt(localStorage.getItem('energy')) : 10000;
 let lastEnergyUpdate = localStorage.getItem('lastEnergyUpdate') 
