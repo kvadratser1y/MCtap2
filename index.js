@@ -59,6 +59,12 @@ tapButton.addEventListener('click', () => {
     }
 });
 
+        document.addEventListener('touchstart', function (event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        }, { passive: false });
+
 // Пропуск восстановления энергии
 restoreEnergyButton.addEventListener('click', () => {
     if (tapCount >= ENERGY_SKIP_COST) {
